@@ -1,0 +1,75 @@
+<section class="signin-wrapper">
+  <div class="surface-0 flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+    <div class="grid justify-content-center p-2 lg:p-0" style="min-width: 80%">
+      <div class="col-12 xl:col-6" style="
+          border-radius: 56px;
+          padding: 0.3rem;
+          background: linear-gradient(
+            180deg,
+            var(--primary-color) 10%,
+            rgba(33, 150, 243, 0) 30%
+          );
+        ">
+        <div class="h-full w-full m-0 py-7 px-4" style="
+            border-radius: 53px;
+            background: linear-gradient(
+              180deg,
+              var(--surface-50) 38.9%,
+              var(--surface-0)
+            );
+          ">
+          <div class="text-center mb-5">
+            <img src="assets/images/logo.png" alt="logo" style="width: 200px" />
+          </div>
+          <p-messages severity="error" *ngIf="isError">
+            <ng-template pTemplate>
+              <i class="pi pi-exclamation-triangle text-3xl font-bold"></i>
+              <div class="ml-2">Invalid Username/Password</div>
+            </ng-template>
+          </p-messages>
+          <form class="ink-signin-form p-col-12 p-nogutter" [formGroup]="loginForm" (ngSubmit)="signIn()">
+            <div class="w-full md:w-10 mx-auto">
+              <label for="username" class="block text-900 text-xl font-medium mb-2">
+                Username
+              </label>
+              <input id="username" formControlName="username" type="text" placeholder="Enter Username" pInputText
+                class="w-full mb-2" style="padding: 1rem" [ngClass]="{
+                  'ng-invalid ng-dirty':
+                    f['username'].invalid &&
+                    (f['username'].dirty ||
+                      f['username'].touched ||
+                      isSubmitted)
+                }" />
+              <small id="username-help" class="p-error block" *ngIf="f['username'].invalid && isSubmitted">
+                Enter Username!
+              </small>
+
+              <label for="password1" class="block text-900 font-medium text-xl mt-3 mb-2">
+                Password
+              </label>
+              <input id="password" formControlName="password" type="password" placeholder="Password" pInputText
+                class="w-full mb-2" style="padding: 1rem" autocomplete="on" [ngClass]="{
+                  'ng-invalid ng-dirty':
+                    f['password'].invalid &&
+                    (f['password'].dirty ||
+                      f['password'].touched ||
+                      isSubmitted)
+                }" />
+              <small id="username-help" class="p-error block" *ngIf="f['username'].invalid && isSubmitted">
+                Enter Password!
+              </small>
+
+              <div class="flex align-items-center justify-content-between mb-5">
+                <div class="flex align-items-center"></div>
+                <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">
+                  Forgot password?
+                </a>
+              </div>
+              <button pButton pRipple label="Sign In" class="w-full p-3 text-xl"></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

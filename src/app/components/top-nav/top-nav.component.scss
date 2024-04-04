@@ -1,0 +1,33 @@
+@import "styles";
+
+.tit-top-nav-wrapper {
+  height: 100%;
+  background-color: #444;
+  padding: 0 15px;
+  .tit-logo {
+    height: 60px;
+  }
+}
+
+.ink-alert-overlay {
+  &.p-overlaypanel {
+    top: 60px;
+    right: 10px;
+    &:after,
+    &:before {
+      display: none;
+    }
+    .p-overlaypanel-content {
+      padding: 15px 15px 5px 15px;
+    }
+    .p-overlaypanel-close {
+      width: 20px;
+      height: 20px;
+      top: -5px;
+      right: -5px;
+      .p-overlaypanel-close-icon {
+        font-size: 12px;
+      }
+    }
+  }
+}

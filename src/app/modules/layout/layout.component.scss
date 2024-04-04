@@ -1,0 +1,61 @@
+@import "styles";
+
+.tit-layout-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  .tit-header-container {
+    width: inherit;
+    height: 60px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: inherit;
+  }
+
+  .tit-side-nav-container {
+    width: 60px;
+    height: calc(100vh - 60px);
+    transition: width 0.2s;
+    background-color: aquamarine;
+    // border: 1px solid #ddd;
+    // padding: 30px 30px 10px 30px;
+    padding: 0px;
+    background-color: $body-background-color;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    top: 60px;
+    .tit-body-wrapper {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .tit-content-container {
+    width: calc(100vw - 60px);
+    height: calc(100vh - 60px);
+    transition: width 0.2s;
+    border: 1px solid #ddd;
+    // padding: 30px 30px 10px 30px;
+    padding: 15px;
+    background-color: $body-background-color;
+    overflow: auto;
+    position: relative;
+    z-index: 1;
+    top: 60px;
+  }
+  .tit-overlay {
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+    z-index: 1;
+  }
+}
+
+// control width of application on large screens
+@media screen and (min-width: 1900px) {
+  .tit-layout-wrapper {
+    width: 80vw;
+    margin: 0 10vw;
+  }
+}

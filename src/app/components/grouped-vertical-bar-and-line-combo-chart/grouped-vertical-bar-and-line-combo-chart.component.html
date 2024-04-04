@@ -1,0 +1,34 @@
+<section
+  class="w-full h-full grouped-vertical-bar-and-line-combo-chart-wrapper"
+>
+  <div
+    *ngIf="input"
+    class="bg-white border-transparent border-1 border-round-lg w-full h-full shadow-3 p-4"
+  >
+    <div class="flex justify-content-between">
+      <div class="text-xl">{{ input.title }}</div>
+      <div>
+        <p-dropdown
+          [options]="dropDownOptions"
+          [(ngModel)]="selectedOption"
+          dropdownIcon="fa-regular fa-angle-down"
+        ></p-dropdown>
+      </div>
+    </div>
+    <p-chart
+      type="bar"
+      [data]="input"
+      [options]="chartOptions"
+      width="100%"
+      height="90%"
+    ></p-chart>
+  </div>
+
+  <!-- loader -->
+  <div
+    *ngIf="!input"
+    class="bg-white border-transparent border-1 border-round-lg w-full h-full shadow-3 p-4 loading-placeholder"
+  >
+    Loading...
+  </div>
+</section>

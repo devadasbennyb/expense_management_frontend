@@ -1,0 +1,32 @@
+<p-table [value]="reportsData">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Date</th>
+            <th>Report Name</th>
+            <th>Duration</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>Action</th>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-data>
+        <tr>
+            <td>{{data.date}}</td>
+            <td>{{data.reportName}}</td>
+            <td>{{data.duration}}</td>
+            <td>{{data.description}}</td>
+            <td>{{data.status}}</td>
+            <td>{{data.total}}</td>
+            <td>
+                <i class="fa fa-pencil" (click)="editReport(data.reportId)"></i>&nbsp;
+                <i class="fa-solid fa-trash" (click)="deleteReport(data)"></i>
+            </td>
+        </tr>
+        <p-dialog header="Update Report" [(visible)]="isAddReportDialog" [modal]="true" [style]="{ width: '50vw' }"
+            [draggable]="false" [resizable]="false">
+            <app-add-report [reportId]="reportId" (closeDialog)="closeDialoge($event)"></app-add-report>
+        </p-dialog>
+    </ng-template>
+</p-table>

@@ -1,0 +1,47 @@
+<p-table [value]="expensesData">
+  <ng-template pTemplate="header">
+    <tr>
+      <!-- <th>Expense Id</th> -->
+      <!-- <th>Employee Id</th> -->
+      <th>Date</th>
+      <th>Merchant</th>
+      <th>Expense Type</th>
+      <th>Description</th>
+      <th>Currency</th>
+      <th>Amount</th>
+      <th>Payment Type</th>
+      <th>Status</th>
+      <th>Bill Location</th>
+      <!-- <th>Created Date</th> -->
+      <!-- <th>Updated Date</th> -->
+      <th>Actions</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-data>
+    <tr>
+      <!-- <td>{{ data.expId }}</td> -->
+      <!-- <td>{{data.employeeModel.empId}}</td> -->
+      <td>{{data.date}}</td>
+      <td>{{data.merchant}}</td>
+      <td>{{data.expenseTypeModel.expenseType }}</td>
+      <td>{{ data.description }}</td>
+      <td>{{ data.currency }}</td>
+      <td>{{ data.amount }}</td>
+      <td>{{ data.paymentModel.paymentName }}</td>
+      <td>{{data.status}}</td>
+      <td>{{data.billLocation}}</td>
+      <!-- <td>{{ data.created }}</td> -->
+      <!-- <td>{{ data.updated }}</td> -->
+      <td>
+        <i class="fa fa-pencil" (click)="editExpense(data.expId)"></i>&nbsp;
+        <i class="fa-solid fa-trash" (click)="deleteExpense(data)"></i>
+      </td>
+    </tr>
+
+  </ng-template>
+</p-table>
+
+<p-dialog header="Update Expense" [(visible)]="isAddExpenseDialog" [modal]="true" [style]="{ width: '50vw' }"
+  [draggable]="false" [resizable]="false">
+  <app-add-expense [expId]="expId" (closeDialog)="closeDialoge($event)"></app-add-expense>
+</p-dialog>

@@ -1,0 +1,129 @@
+// global valiables
+// --text-color:#495057;
+// --text-color-secondary:#6c757d;
+// --primary-color:#2196F3;
+// --primary-color-text:#ffffff;
+
+// primeNG Colors
+// $primary-color: #2196f3;
+// $primary-color: #0078d4; //blue
+$primary-color: #2196f3; //blue
+// $primary-color: #4caf50; //green
+$primary-light-color: #b7e0b8;
+$secondary-color: #d59810;
+$primary-color-text: #ffffff;
+$text-color: #495057;
+$text-color-secondary: #6c757d;
+
+// $blue-color: #038ecd;
+$blue-color: #2196f3;
+$blue-light-color: #a6d5fa;
+// $red-color: #e15d44;
+$red-color: #d13438;
+$yellow-color: #ffc200;
+$green-color: #34a853;
+// $amber-color: #b16e09;
+$amber-color: #ffaa44;
+
+$text-label-color: #111;
+
+$component-background-color: #fff;
+
+$grey-color: #ccc;
+$grey-color-2: #f1f1f1;
+
+// SCSS Way
+// header
+$table-header-background-color: #bbbbbb;
+$component-header-background-color: #e3e3e3;
+$header-background-color: #f9f9f9;
+$header-text-color: #000;
+
+$body-background-color: #f9f9f9;
+
+$border-color: #a19f9d;
+
+// icon colors
+$icon-light: #fff;
+$icon-dark: #000;
+$icon-hover-color: #98a27e;
+
+// chart colors
+$chart-blue: #0078d4;
+$chart-grey: #edebe9;
+
+.tit-primary-color {
+  color: $primary-color !important;
+}
+.tit-blue-color {
+  color: $blue-color;
+}
+
+.tit-green-color {
+  color: $green-color;
+}
+.tit-amber-color {
+  color: $amber-color;
+}
+
+.tit-red-color {
+  color: $red-color;
+}
+
+.tit-grey-color {
+  color: $grey-color;
+}
+
+.tit-black-color {
+  color: #000;
+}
+
+.tit-yellow-color {
+  color: $yellow-color;
+}
+
+.tit-button-blue {
+  color: #ffffff;
+  background: $blue-color;
+  border: 1px solid $blue-color;
+  &:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.2rem rgb(38 143 255 / 50%);
+  }
+  &:hover {
+    background: #106ebe;
+    color: #ffffff;
+    border-color: #106ebe;
+  }
+}
+
+.tit-flag-red {
+  color: #d13438;
+}
+.tit-flag-amber {
+  color: #ffaa44;
+}
+.tit-flag-green {
+  color: #498205;
+}
+
+.tit-red-box {
+  border: 1px solid $red-color !important;
+  background-color: rgba(209, 52, 56, 0.15);
+}
+
+.tit-amber-box {
+  border: 1px solid $amber-color !important;
+  background-color: rgba(255, 170, 68, 0.15);
+}
+
+.tit-blue-box {
+  border: 1px solid $blue-color !important;
+  background-color: rgba(33, 150, 243, 0.15);
+}
+
+.tit-green-box {
+  border: 1px solid $green-color !important;
+  background-color: rgba(52, 168, 83, 0.15);
+}

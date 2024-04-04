@@ -1,0 +1,23 @@
+<section class="grid home-wrapper">
+  <app-kpi-v1
+    class="col-12 md:col-6 lg:col-3"
+    [input]="kpiData[0]"
+  ></app-kpi-v1>
+  <app-kpi-v1
+    class="col-12 md:col-6 lg:col-3"
+    [input]="kpiData[1]"
+  ></app-kpi-v1>
+  <app-kpi-v1
+    class="col-12 md:col-6 lg:col-3"
+    [input]="kpiData[2]"
+  ></app-kpi-v1>
+  <app-kpi-v1
+    class="col-12 md:col-6 lg:col-3"
+    [input]="kpiData[3]"
+  ></app-kpi-v1>
+  <app-grouped-vertical-bar-and-line-combo-chart
+    class="col-12"
+    style="height: 400px"
+    [input]="chartData"
+  ></app-grouped-vertical-bar-and-line-combo-chart>
+</section>

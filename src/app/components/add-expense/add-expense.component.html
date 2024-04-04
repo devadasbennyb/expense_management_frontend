@@ -1,0 +1,153 @@
+<section class="add-expense-wrapper">
+  <form [formGroup]="addExpense" (ngSubmit)="onSubmit()">
+    <div class="p-fluid">
+      <div class="p-formgrid grid">
+        <div class="field col">
+          <label for="date">Date<span class="kts-required">*</span></label>
+          <input pInputText id="date" type="date" formControlName="date" placeholder="yyyy-mm-dd" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['date'].errors
+            }" />
+        </div>
+        <div class="field col">
+          <label for="merchant">Merchant<span class="kts-required">*</span></label>
+          <input pInputText id="merchant" type="text" formControlName="merchant" placeholder="Enter Merchant Name"
+            [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['merchant'].errors
+            }" />
+        </div>
+        <div class="field col" formGroupName="employeeModel">
+          <label for="empId">Employee Id<span class="kts-required">*</span></label>
+          <input required maxLength="4" minLength="1" pattern="^[0-9]{1,4}" pInputText id="empId" type="text"
+            formControlName="empId" placeholder="Enter Employee Id" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['empId'].errors
+            }" />
+        </div>
+      </div>
+      <div class="p-formgrid grid">
+        <div class="field col" formGroupName="expenseTypeModel">
+          <label for="expenseTypeId">Expense Type Id<span class="kts-required">*</span></label>
+          <input required maxLength="4" minLength="1" pattern="^[0-9]{1,4}" pInputText id="expenseTypeId" type="text"
+            formControlName="expenseTypeId" placeholder="Enter Expense Type Id" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['expenseTypeId'].errors
+            }" />
+        </div>
+        <div class="field col" formGroupName="paymentModel">
+          <label for="payId">Payment Id<span class="kts-required">*</span></label>
+          <input required maxLength="4" minLength="1" pattern="^[0-9]{1,4}" pInputText id="payId" type="text"
+            formControlName="payId" placeholder="Enter Payment Id" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['payId'].errors
+            }" />
+        </div>
+        <div class="field col">
+          <label for="amount">Amount<span class="kts-required">*</span></label>
+          <input required maxLength="7" minLength="3" pattern="^[0-9]{3,7}" pInputText id="amount" type="text"
+            formControlName="amount" placeholder="Enter Amount" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['amount'].errors
+            }" />
+        </div>
+      </div>
+      <div class="p-formgrid grid">
+        <div class="field col">
+          <label for="customerName">Description<span class="kts-required">*</span></label>
+          <input pInputText id="description" type="text" formControlName="description" placeholder="Enter Description"
+            [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['description'].errors
+            }" />
+        </div>
+        <div class="field col">
+          <label for="currency">Currency<span class="kts-required">*</span></label>
+          <select pInputText name="currency" id="currency"placeholder="Select Currency" formControlName="currency" class="form-control" >
+            <option value="{{currency.code}}" *ngFor="let currency of currencyList" >{{currency.name}}</option></select>
+        </div>
+
+        <!-- <div class="field col">
+          <label for="currency">Currency</label>
+          <p-dropdown inputId="currency" [options]="currencyList" formControlName="currency" optionLabel="name"
+            [filter]="true" filterBy="code" [showClear]="true" placeholder="Select a currency" appendTo="body">
+            <ng-template pTemplate="selectedItem">
+              <div *ngIf="f['currency'].value">
+                <div>{{ f?.["currency"]?.value?.name }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-currency pTemplate="item">
+              <div>
+                <div>{{ currency.name }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div> -->
+        <div class="field col">
+          <label for="status">Status<span class="kts-required">*</span></label>
+          <input pInputText id="status" type="text" formControlName="status" placeholder="Enter Status" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['status'].errors
+            }" />
+        </div>
+        <div class="field col">
+          <label for="addToReports">Add To Reports<span class="kts-required">*</span></label>
+          <input pInputText id="addToReports" type="text" formControlName="addToReports"
+            placeholder="Enter Add To Reports" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['addToReports'].errors
+            }" />
+        </div>
+        <!-- <div class="field col">
+          <label for="amount">Amount<span class="kts-required">*</span></label>
+          <input required maxLength="3" minLength="6" pattern="^[0-9]{3-6}" pInputText id="amount" type="text"
+            formControlName="amount" placeholder="Enter Amount" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['description'].errors
+            }" />
+        </div>
+        <div class="field col">
+          <label for="expenseType">Expense Type</label>
+          <p-dropdown inputId="expenseType" [options]="options" formControlName="expenseType" optionLabel="name"
+            [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Expense Type" appendTo="body">
+            <ng-template pTemplate="selectedItem">
+              <div *ngIf="f['expenseType'].value">
+                <div>{{ f?.["expenseType"]?.value?.name }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-expenseType pTemplate="item">
+              <div>
+                <div>{{ expenseType.name }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+        <div class="field col">
+          <label for="paymentType">Payment Type</label>
+          <p-dropdown inputId="paymentType" [options]="options" formControlName="paymentType" optionLabel="name"
+            [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Payment Type" appendTo="body">
+            <ng-template pTemplate="selectedItem">
+              <div *ngIf="f['paymentType'].value">
+                <div>{{ f?.["paymentType"]?.value?.name }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-paymentType pTemplate="item">
+              <div>
+                <div>{{ paymentType.name }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+        <div class="field col">
+          <label for="billLocation">Bill Location<span class="kts-required">*</span></label>
+          <input pInputText id="billLocation" type="text" formControlName="billLocation" placeholder="Bill Location"
+            [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['description'].errors
+            }" />
+        </div> -->
+      </div>
+    </div>
+    <div class="flex justify-content-end flex-wrap">
+      <!-- <button pButton type="submit" class="p-button-primary mr-2" [disabled]="addExpense.invalid"> -->
+      <button pButton *ngIf="save" type="submit" class="p-button-primary mr-2" (click)="saveExpense()">
+        Save
+      </button>
+      <button pButton *ngIf="update" type="submit" class="p-button-primary mr-2" (click)="UpdateExpesne()">
+        Update
+    </button>
+      <button pButton type="button" (click)="onReset()" class="p-button-warning float-right mx-2">
+        Reset
+      </button>
+    </div>
+  </form>
+</section>

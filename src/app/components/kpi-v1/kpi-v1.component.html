@@ -1,0 +1,20 @@
+<section class="kpi-v1-wrapper">
+  <div
+    *ngIf="input; else elseBlock"
+    class="bg-white border-transparent border-1 border-round-lg w-full h-full shadow-3 p-4"
+  >
+    <div class="text-xl font-light">{{ input.title }}</div>
+    <div class="text-2xl my-2">{{ input.value }}</div>
+    <div class="">
+      <span class="text-blue-500">{{ input.textValue }}</span>
+      {{ input.text }}
+    </div>
+  </div>
+  <!-- loader -->
+  <ng-template
+    #elseBlock
+    class="bg-white border-transparent border-1 border-round-lg w-full h-full shadow-3 p-4 loading-placeholder"
+  >
+    Loading...
+  </ng-template>
+</section>

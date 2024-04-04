@@ -1,0 +1,39 @@
+<p-table [value]="tripData">
+    <ng-template pTemplate="header">
+        <tr>
+            <!-- <th>Trip Id</th> -->
+            <!-- <th>Employee Id</th> -->
+            <th>Date</th>
+            <th>Trip Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>From Location</th>
+            <th>To Location</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-data>
+        <tr>
+            <!-- <td>{{data.tripId}}</td> -->
+            <!-- <td>{{data.employeeModel.empId}}</td> -->
+            <td>{{data.date}}</td>
+            <td>{{data.tripName}}</td>
+            <td>{{data.startDate}}</td>
+            <td>{{data.endDate}}</td>
+            <td>{{data.fromLocation}}</td>
+            <td>{{data.toLocation}}</td>
+            <td>{{data.description}}</td>
+            <td>{{data.status}}</td>
+            <td>
+                <i class="fa fa-pencil" (click)="editTrip(data.tripId)"></i>&nbsp;
+                <i class="fa-solid fa-trash" (click)="deleteTrip(data)"></i>
+            </td>
+        </tr>
+        <p-dialog header="Update Trip" [(visible)]="isAddTripDialog" [modal]="true" [style]="{ width: '50vw' }"
+            [draggable]="false" [resizable]="false">
+            <app-add-trip [tripId]="tripId" (closeDialog)="closeDialoge($event)"></app-add-trip>
+        </p-dialog>
+    </ng-template>
+</p-table>

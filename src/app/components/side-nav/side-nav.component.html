@@ -1,0 +1,36 @@
+<section class="flex flex-column side-nav-wrapper">
+  <div class="flex align-items-center justify-content-center tit-icon-box-hover"
+    [ngClass]="{ active: currentNav == 'home' }">
+    <i pTooltip="Home" class="fa-light fa-house tit-icon tit-icon-size-30 my-3" (click)="routeTo('home')"></i>
+  </div>
+  <div class="flex align-items-center justify-content-center tit-icon-box-hover"
+    [ngClass]="{ active: currentNav == 'expense' }">
+    <i pTooltip="Expense" class="fa-light fa-hand-holding-dollar tit-icon tit-icon-size-30 my-3" (click)="routeTo('expense')"></i>
+  </div>
+  <div class="flex align-items-center justify-content-center tit-icon-box-hover"
+    [ngClass]="{ active: currentNav == 'trip' }">
+    <i pTooltip="Travel" class="fa-light fa-plane-departure tit-icon tit-icon-size-30 my-3" (click)="routeTo('trip')"></i>
+  </div>
+  <div class="flex align-items-center justify-content-center tit-icon-box-hover"
+    [ngClass]="{ active: currentNav == 'reports' }">
+    <i pTooltip="Reports"
+      class="fa-light fa-file-invoice-dollar tit-icon tit-icon-size-30 my-3" (click)="routeTo('reports')"></i>
+  </div>
+  <div class="flex align-items-center justify-content-center tit-icon-box-hover"w
+    [ngClass]="{ active: currentNav == 'advances' }">
+    <i pTooltip="Advances"
+      class="fa-light fa-magnifying-glass-dollar tit-icon tit-icon-size-30 my-3" (click)="routeTo('advances')"></i>
+  </div>
+  <div class="flex align-items-center justify-content-center tit-icon-box-hover"
+    [ngClass]="{ active: currentNav == 'settings' }">
+    <i pTooltip="Settings" class="fa-light fa-gear tit-icon tit-icon-size-30 my-3"
+      (click)="routeTo('settings')"></i>
+  </div>
+  <div class="flex align-items-center justify-content-center tit-icon-box-hover"
+    [ngClass]="{ active: currentNav == 'admin' }">
+    <i pTooltip="Admin" class="fa-light fa-user-secret tit-icon tit-icon-size-30 my-3"
+      (click)="routeTo('admin')"></i>
+  </div>
+</section>
+
+<i class="fa-light"></i>

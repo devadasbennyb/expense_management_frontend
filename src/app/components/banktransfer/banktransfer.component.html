@@ -1,0 +1,65 @@
+<section class="banktransfer-wrapper">
+    <div class=" card  flex align-items justify-content-center  overflow-hidden">
+        <div class="field grid">
+            <form>
+                <div id="bankDetails" style="flex: auto; text-align: center;">
+                    <h3 class=" block text-900 text-2xl font-bold mb-2">Bank Details </h3>
+                </div>
+
+                <!--Account number-->
+                <div class="card">
+                    <h2 class="block text-600 text-xl font-medium mb-2" for="accountNumber">Account Number</h2>
+                   
+                    <div class="field grid">
+                        <div class="col">
+                            <input pInputText class="w-full mb-2 col" style="padding: 1rem" type="text"
+                                id="accountNumber" placeholder="Account number">
+                        </div>
+                    </div>
+
+
+                    <!--re-enter acccount number-->
+                        <h2 class="block text-600 text-xl font-medium mb-2" for="reenteraccountnumber">Re-enter
+                            Account Number</h2>
+                        <div class="field grid">
+                            <div class="col">
+                                <input pInputText class="w-full mb-2 col" style="padding: 1rem" type="text" id="reenteraccountnumber" placeholder="Re-enter Bank account number"
+                                    >
+                            </div>
+                        </div>
+                   
+                </div>
+
+                <!--IFSC code-->
+                <div class="control-group">
+                    <label class="control-label" for="ifsccode">IFSC Code</label>
+                    <div class="controls">
+                        <input type="number" id="ifsccode" placeholder="enter the IFSC Code" class="input-xlarge">
+                    </div>
+                </div>
+
+                <!--Branch-->
+                <div class="control-group">
+                    <label class="control-label" for="branchname">Branch Name</label>
+                    <div class="controls">
+                        <input type="text" placeholder="enter the branch name" id="branchname" class="input-xlarge">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class=controls>
+                        <button class="btn btn-success">Add</button>&nbsp;
+                        <button class="btn btn-danger">Cancel</button>
+                    </div>
+                    <div class="controls">
+
+                    </div>
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+</section>

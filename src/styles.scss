@@ -1,0 +1,435 @@
+/* You can add global styles to this file, and also import other style files */
+/*
+# highest z-index : 99999 => applied to top header
+*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import "colors";
+
+// variables
+
+$primary-text-font-size: 15px;
+$primary-icon-font-size: 20px;
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-weight: 500;
+  background-color: #f9f9f9;
+  overflow: hidden;
+  // background-color: #121212;
+  color: #495057 !important;
+  font-size: 13px;
+}
+
+.rpm {
+  padding: 0;
+  margin: 0;
+}
+
+.mrg-0 {
+  margin: 0px;
+}
+.mrg-10 {
+  margin: 10px;
+}
+
+.mrg-5 {
+  margin: 5px;
+}
+
+.tit-required {
+  color: #dc3545;
+}
+.tit-icon {
+  cursor: pointer;
+  font-size: 20px;
+  &.tit-icon-hover {
+    &.active,
+    &:hover {
+      color: $icon-hover-color;
+    }
+  }
+  &.tit-icon-size-15 {
+    font-size: 15px;
+  }
+  &.tit-icon-size-20 {
+    font-size: 20px;
+  }
+  &.tit-icon-size-25 {
+    font-size: 25px;
+  }
+  &.tit-icon-size-30 {
+    font-size: 30px;
+  }
+}
+
+.tit-icon-box-hover {
+  cursor: pointer;
+  &.active,
+  &:hover {
+    background-color: $icon-hover-color;
+  }
+}
+
+.tit-icon-circle {
+  border: 1px solid #fff;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  padding: 5px;
+
+  .tit-icon {
+    font-size: 20px;
+  }
+}
+.tit-border-radius-top-left-4 {
+  border-radius: 4px 0 0;
+}
+
+.tit-item-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.tit-item-center-v {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.tit-item-center-h {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.tit-action-dropdown {
+  ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    li {
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+      cursor: pointer;
+      &:hover {
+        background-color: #00000014;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.tit-table {
+  width: 100%;
+  border-collapse: collapse;
+  .tit-table-header {
+    .tit-table-row {
+      background-color: $grey-color;
+      .tit-table-column {
+        font-size: 14px;
+        font-weight: 700;
+        text-align: left;
+      }
+    }
+  }
+  .tit-table-body {
+    .tit-table-row {
+      .tit-table-column {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.tit-link {
+  text-decoration: none;
+  opacity: 0.7;
+  color: $blue-color;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.tit-title {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 15px;
+  display: block;
+}
+
+.tit-badge {
+  .p-badge {
+    min-width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    padding: 0px 4px;
+    max-width: 1.3rem;
+  }
+}
+
+//
+.tit-width-100 {
+  width: 100%;
+}
+.tit-input-80 {
+  width: 80%;
+}
+
+.tit-invisible {
+  visibility: hidden;
+}
+
+.tit-text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 100%;
+}
+
+.tit-component-header {
+  width: 100%;
+  height: 30px;
+  background-color: $component-header-background-color;
+  padding: 5px;
+  border-radius: 4px 4px 0 0;
+  // line-height: 20px;
+  align-items: center;
+}
+
+.tit-omponent-body {
+  padding: 10px;
+}
+
+.tit-pull-right {
+  float: right;
+}
+
+.tit-font-10 {
+  font-size: 10px;
+}
+
+.tit-font-16 {
+  font-size: 16px;
+}
+
+.tit-font-18 {
+  font-size: 18px;
+}
+
+.tit-main-panel {
+  // padding: 15px;
+  padding-top: 10px;
+}
+.tit-right-panel {
+  // height: calc(100vh - 90px);
+  height: 734px;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  margin-top: 18px;
+  .tit-right-panel-header {
+    width: 100%;
+    height: 40px;
+    background-color: $component-header-background-color;
+    padding: 5px;
+    border-radius: 4px 4px 0 0;
+    padding: 10px;
+    .tit-header-title {
+      font-size: 1.2em;
+    }
+    .tit-close-btn {
+      font-size: 1.5em !important;
+    }
+  }
+}
+
+// tit-list
+.tit-list-container {
+  height: calc(100% - 35px);
+  .tit-list-wrapper {
+    height: 100%;
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    .tit-list-row {
+      background-color: #fff;
+      position: relative;
+      font-size: 14px;
+      display: flex;
+      border-bottom: 1px solid $border-color;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      align-items: center;
+      padding: 7px 15px;
+
+      &:first-child {
+        border-top: 1px solid $border-color;
+      }
+
+      &:hover {
+        background-color: #f8f9fa;
+        .tit-list-detail {
+          .tit-action-list-hover {
+            display: flex;
+          }
+        }
+      }
+
+      .tit-list-icon {
+        color: #555;
+        margin-right: 10px;
+        font-size: 25px;
+      }
+      .tit-list-detail {
+        width: calc(100% - 30px);
+        float: left;
+        .tit-list-desc {
+          display: block;
+          margin: 0 0 3px 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          word-wrap: break-word;
+          white-space: pre-wrap;
+        }
+        .tit-list-date {
+          font-size: 12px;
+        }
+        .tit-list-type {
+          border: 1px solid rgba(0, 0, 0, 0.5);
+          border-radius: 2em;
+          padding: 0 8px;
+          font-size: 11px;
+          color: rgba(0, 0, 0, 0.5);
+        }
+        .tit-action-list-hover {
+          display: none;
+          justify-content: space-between;
+          padding: 5px 0;
+          align-items: end;
+        }
+      }
+    }
+  }
+}
+
+.tit-panel-header {
+  padding: 0 0 0 5px;
+  background-color: #ddd;
+  border-radius: 4px 4px 0 0;
+  .tit-search-bar {
+    border: none;
+    border-radius: 0 4px 0 0;
+    border-bottom: 1px solid $table-header-background-color;
+  }
+}
+
+// placeholder
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #323130;
+  opacity: 0.5; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #323130;
+  opacity: 0.5; /* Firefox */
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #323130;
+  opacity: 0.5; /* Firefox */
+}
+
+// scss functions
+@function mrg($val) {
+  @return $val;
+}
+
+// Media Queries
+@media only screen and (max-width: 576px) {
+}
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 992px) {
+  .tit-col-5 {
+    width: 20%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .tit-col-5 {
+    width: 20%;
+  }
+}
+@media only screen and (max-width: 1440px) {
+}
+
+// spinner/loader
+:host ::ng-deep .custom-spinner .p-progress-spinner-circle {
+  animation: custom-progress-spinner-dash 1.5s ease-in-out infinite,
+    custom-progress-spinner-color 6s ease-in-out infinite;
+}
+
+@keyframes custom-progress-spinner-color {
+  100%,
+  0% {
+    stroke: #16697a;
+  }
+  40% {
+    stroke: #489fb5;
+  }
+  66% {
+    stroke: #82c0cc;
+  }
+  80%,
+  90% {
+    stroke: #ffa62b;
+  }
+}
+
+@keyframes custom-progress-spinner-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+// loading placeholder
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+.loading-placeholder {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background-size: 1000px 104px;
+  height: 338px;
+  position: relative;
+  overflow: hidden;
+}

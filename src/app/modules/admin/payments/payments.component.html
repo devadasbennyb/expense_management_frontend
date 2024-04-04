@@ -1,0 +1,11 @@
+<section class="tit-payments-wrapper">
+  <section class="">
+    <p-tabMenu [model]="methods"></p-tabMenu>
+  </section>
+
+  <router-outlet></router-outlet>
+</section>
+<p-dialog header="Bank Transfer" [(visible)]="bankTransferDialog" [modal]="true" [style]="{ width: '50vw' }"
+  [draggable]="false" [resizable]="false">
+  <app-banktransfer></app-banktransfer>
+</p-dialog>

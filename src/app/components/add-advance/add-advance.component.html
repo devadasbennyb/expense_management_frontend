@@ -1,0 +1,54 @@
+<section class="add-expense-wrapper">
+  <form [formGroup]="addAdvance" (ngSubmit)="onSubmit()">
+    <div class="p-fluid">
+      <div class="p-formgrid grid">
+        <div class="field col">
+          <label for="date">Date<span class="kts-required">*</span></label>
+          <input pInputText id="date" type="date" formControlName="date" placeholder="yyyy-mm-dd" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['date'].errors
+            }" />
+        </div>
+        <div class="field col">
+          <label for="advanceName">Advance Name<span class="kts-required">*</span></label>
+          <input required pInputText id="advanceName" type="text" formControlName="advanceName"
+            placeholder="Enter Report Name" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['advanceName'].errors
+            }" />
+        </div>
+      </div>
+      <div class="p-formgrid grid">
+        <div class="field col">
+          <label for="description">Description<span class="kts-required">*</span></label>
+          <input pInputText id="description" type="text" formControlName="description" placeholder="Enter Description"
+            [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['description'].errors
+            }" />
+        </div>
+        <div class="field col">
+          <label for="status">Status<span class="kts-required">*</span></label>
+          <input pInputText id="status" type="text" formControlName="status" placeholder="Enter Status" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['status'].errors
+            }" />
+        </div>
+        <div class="field col">
+          <label for="amount">Amount<span class="kts-required">*</span></label>
+          <input pInputText id="amount" maxLength="5" minLength="1" pattern="^[0-9]{1,5}" type="text"
+            formControlName="amount" placeholder="Enter Amount" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['amount'].errors
+            }" />
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-content-end flex-wrap">
+      <button pButton type="submit" class="p-button-primary mr-2" (click)="saveAdvance()">
+        Submit
+      </button>
+      <button pButton type="submit" class="p-button-primary mr-2" (click)="UpdateAdvance()">
+        Update
+    </button>
+      <button pButton type="button" (click)="onReset()" class="p-button-warning float-right mx-2">
+        Reset
+      </button>
+    </div>
+  </form>
+</section>

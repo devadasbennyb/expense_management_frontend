@@ -1,0 +1,52 @@
+<section class="users-wrapper">
+  <div class="card">
+    <p-table  [value]="employee" styleClass="p-datatable-sm"
+      [tableStyle]="{'min-width': '50rem'}">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Emp Id</th>
+          <th>Dep ID</th>
+          <th>Manager</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Acc Num</th>
+          <th>Credit</th>
+          <th>Address</th>
+          <th>State</th>
+          <th>Zip</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-employee>
+        <tr>
+          <td>{{employee.empId}}</td>
+          <td>{{employee.department.departmentId}}</td>
+          <td>{{employee.manager.managerId}}</td>
+          <td>{{employee.firstName}}</td>
+          <td>{{employee.lastName}}</td>
+          <td>{{employee.emailId}}</td>
+          <td>{{employee.mobile}}</td>
+          <td>{{employee.accountNumber}}</td>
+          <td>{{employee.creditCard}}</td>
+          <td>{{employee.address}}</td>
+          <td>{{employee.state}}</td>
+          <td>{{employee.zip}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <!-- <div class="grid">
+    <p-card *ngFor="let user of employee" class="col-12">
+      <p-avatar icon="fa fa-user" styleClass="p-mr-4" size="large" [style]="{'background-color':'#2196F3', 'color': '#ffffff'}"></p-avatar>
+      <div>{{ user.empId}}. {{ user.firstName }} {{ user.lastName }} - {{ user.email }} </div>
+      <div style="margin-left: 95% ;"><i class="fa fa-pencil" (click)="editUser(user.empId)"></i>&nbsp;
+        <i class="fa-solid fa-trash" (click)="deleteUser(user.empId)"></i>
+      </div>
+    </p-card>
+    <p-dialog header="Update User" [(visible)]="isAddUserDialog" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+      <app-add-user [userId]="empId" (closeDialog)="closeDialoge($event)"></app-add-user>
+    </p-dialog>
+  </div> -->
+</section>

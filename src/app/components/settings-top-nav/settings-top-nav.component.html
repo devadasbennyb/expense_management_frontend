@@ -1,0 +1,133 @@
+<section class="">
+  <div>
+    <h2>My Settings</h2>
+  </div>
+  <div>
+    <button style="font-size: large; font-weight: bold" (click)="showBasics()">
+      Basic Information</button
+    >&nbsp;&nbsp;&nbsp;
+    <button
+      style="font-size: large; font-weight: bold"
+      (click)="showPreferences()"
+    >
+      Preferences</button
+    >&nbsp;&nbsp;&nbsp;
+    <button style="font-size: large; font-weight: bold" (click)="showTravels()">
+      Travel Documents
+    </button>
+  </div>
+
+  <div *ngIf="showBasic">
+    <table>
+      <td>
+        <i
+          class="fa-solid fa-circle-info tit-icon tit-icon-size-30 tit-icon-hover mx-2"
+        ></i>
+      </td>
+      <td>
+        <h2>Personal Details</h2>
+      </td>
+    </table>
+  </div>
+  <div *ngIf="showBasic">
+    <table>
+      <tr>
+        <td><label style="font-size: large; font-weight: bold">Name</label></td>
+        <td><input style="height: 40px; width: 400px" /></td>
+      </tr>
+      <tr>
+        <td>
+          <label style="font-size: large; font-weight: bold"
+            >Email Address</label
+          >
+        </td>
+        <td><input style="height: 40px; width: 400px" /></td>
+      </tr>
+      <tr>
+        <td>
+          <label style="font-size: large; font-weight: bold">Employee Id</label>
+        </td>
+        <td><input style="height: 40px; width: 400px" /></td>
+      </tr>
+      <tr>
+        <td>
+          <label style="font-size: large; font-weight: bold">Mobile</label>
+        </td>
+        <td><input style="height: 40px; width: 400px" /></td>
+      </tr>
+      <tr>
+        <td>
+          <label style="font-size: large; font-weight: bold">Department</label>
+        </td>
+        <td><input style="height: 40px; width: 400px" /></td>
+      </tr>
+      <tr>
+        <td>
+          <label style="font-size: large; font-weight: bold"
+            >Date Of Joining</label
+          >
+        </td>
+        <td><input style="height: 40px; width: 400px" /></td>
+      </tr>
+      <tr></tr>
+      <tr>
+        <td>
+          <label style="font-size: large; font-weight: bold"
+            >Date Of Birth</label
+          >
+        </td>
+        <td><input style="height: 40px; width: 400px" /></td>
+      </tr>
+      <tr>
+        <td>
+          <label style="font-size: large; font-weight: bold">Designation</label>
+        </td>
+        <td><input style="height: 40px; width: 400px" /></td>
+      </tr>
+      <tr>
+        <td>
+          <label style="font-size: large; font-weight: bold">Role Name</label>
+        </td>
+        <td><input style="height: 40px; width: 400px" /></td>
+      </tr>
+      <tr>
+        <td>
+          <label style="font-size: large; font-weight: bold">Submits To</label>
+        </td>
+        <td><input style="height: 40px; width: 400px" /></td>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="showBasic">
+    <table>
+      <tr>
+        <td><h2>Associated Policies</h2></td>
+      </tr>
+      <tr>
+        <td><h2>Tecnics Integration Technologies PVT.LTD</h2></td>
+        <td>
+          <button pButton type="submit" class="p-button-primary mr-1">
+            Default
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="showBasic">
+    <table>
+      <td>
+        <i
+          class="fa-solid fa-circle-info tit-icon tit-icon-size-30 tit-icon-hover mx-2"
+        ></i>
+      </td>
+      <td>
+        <h2>Travel Details</h2>
+      </td>
+    </table>
+  </div>
+  <div *ngIf="showBasic">
+    <button pButton type="submit" class="p-button-primary mr-1">
+      + Add Travel Details
+    </button>
+  </div>
+</section>

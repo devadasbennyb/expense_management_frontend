@@ -1,0 +1,28 @@
+<section class="users-wrapper">
+    <div class="card">
+        <p-table [value]="employee" styleClass="p-datatable-sm" [tableStyle]="{'min-width': '50rem'}">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Users</th>
+                    <th>Roles</th>
+                    <th>Edit</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-employee>
+                <tr>
+                    <td>{{employee.firstName}} {{employee.lastName}}</td>
+                    <!-- <td>USER</td> -->
+                    <td> {{employee.role}}</td>
+                    <i class="fa fa-pencil" (click)="UpdateRole()"></i> &nbsp;
+                    <i class="fa-solid fa-trash" (click)="DeleteRole()"></i>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</section>
+
+<!-- add Role dialog -->
+<p-dialog header="Add Role" [(visible)]="isAddRoleDialog" [modal]="true" [style]="{ width: '50vw' }"
+  [draggable]="false" [resizable]="false">
+  <app-add-role (closeDialog)="closeDialog()"></app-add-role>
+</p-dialog>

@@ -1,0 +1,32 @@
+<section class="add-user-wrapper">
+    <form [formGroup]="addUser" (ngSubmit)="onSubmit()">
+        <div class="p-fluid">
+            <div class="p-formgrid grid">
+                <div class="field col">
+                    <p-table>
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>USER</th>
+                                <th>ROLE</th>
+                                <th>Actions</th>
+                            </tr>
+                            <tr>
+                                <td>BENNY</td>
+                                <td pInputText><select pInputText name="role" id="role" formControlName="role"
+                                        class="form-control">
+                                        <option pInputText value="{{roles.name}}" *ngFor="let roles of role">
+                                            {{roles.name}}</option>
+                                    </select></td>
+                                <td>
+                                    <button pButton type="submit" class="p-button-secondary mr-2" (click)="UpdateRole()">
+                                        Update
+                                    </button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

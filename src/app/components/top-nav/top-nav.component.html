@@ -1,0 +1,55 @@
+<section class="flex justify-content-between tit-top-nav-wrapper">
+  <div class="flex align-items-center justify-content-center">
+    <img src="assets/images/logo.png" alt="logo" class="tit-logo" />
+  </div>
+  <div class="flex align-items-center justify-content-center" style="color: #fff">
+    <i pTooltip="Add" tooltipPosition="bottom"
+      class="fa-solid fa-circle-plus tit-icon tit-icon-size-30 tit-icon-hover mx-2" (click)="showModalDialog()"></i>
+    <i pTooltip="Theme" tooltipPosition="bottom"
+      class="fa-solid fa-palette tit-icon tit-icon-size-30 tit-icon-hover mx-2" (click)="themeModel()"></i>
+    <i pTooltip="Info" tooltipPosition="bottom" #userInfo
+      class="fa-solid fa-circle-user tit-icon tit-icon-size-30 tit-icon-hover mx-2"
+      (click)="alertOverlay.toggle($event)"></i>
+    <p-overlayPanel #alertOverlay [appendTo]="userInfo" styleClass="ink-alert-overlay" [showCloseIcon]="false"
+      [style]="{ width: '230px' }">
+      <app-user-info></app-user-info>
+    </p-overlayPanel>
+  </div>
+</section>
+<!-- add expense dialog -->
+<p-dialog header="Add Expense" [(visible)]="isAddExpenseDialog" [modal]="true" [style]="{ width: '50vw' }"
+  [draggable]="false" [resizable]="false">
+  <app-add-expense (closeDialog)="closeDialog($event)"></app-add-expense>
+</p-dialog>
+<!-- add trip dialog -->
+<p-dialog header="Add Trip" [(visible)]="isAddTripDialog" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false"
+  [resizable]="false">
+  <app-add-trip (closeDialog)="closeDialog($event)"></app-add-trip>
+</p-dialog>
+<!-- add Report dialog -->
+<p-dialog header="Add Report" [(visible)]="isAddReportDialog" [modal]="true" [style]="{ width: '50vw' }"
+  [draggable]="false" [resizable]="false">
+  <app-add-report (closeDialog)="closeDialog($event)"></app-add-report>
+</p-dialog>
+<!-- add Advance dialog -->
+<p-dialog header="Request Advance" [(visible)]="isAddAdvanceDialog" [modal]="true" [style]="{ width: '50vw' }"
+  [draggable]="false" [resizable]="false">
+  <app-add-advance (closeDialog)="closeDialog($event)"></app-add-advance>
+</p-dialog>
+<!-- add User dialog -->
+<p-dialog header="Add Employee" [(visible)]="isAddEmployeeDialog" [modal]="true" [style]="{ width: '50vw' }"
+  [draggable]="false" [resizable]="false">
+  <app-add-employee (closeDialog)="closeDialog($event)"></app-add-employee>
+</p-dialog>
+
+<!-- add Role dialog -->
+<!-- <p-dialog header="Add Role" [(visible)]="isAddRoleDialog" [modal]="true" [style]="{ width: '50vw' }"
+  [draggable]="false" [resizable]="false">
+  <app-add-role (closeDialog)="closeDialog($event)"></app-add-role>
+</p-dialog> -->
+
+<!-- add group dialog -->
+<p-dialog header="Add Group" [(visible)]="isAddGroupDialog" [modal]="true" [style]="{ width: '50vw' }"
+  [draggable]="false" [resizable]="false">
+  <app-add-group (closeDialog)="closeDialog($event)"></app-add-group>
+</p-dialog>

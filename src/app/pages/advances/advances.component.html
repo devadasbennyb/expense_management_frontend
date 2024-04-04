@@ -1,0 +1,89 @@
+<p-table  [value]="advancesData">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Advance Id</th>
+      <th>Date</th>
+      <th>Advances Name</th>
+      <th>Amount</th>
+      <th>Description</th>
+      <th>Status</th>
+      <!-- <th>Created Date</th> -->
+      <!-- <th>Updated Date</th> -->
+      <th>Actions</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-data>
+    <tr>
+      <td>{{ data.advanceId }}</td>
+      <td>{{ data.date }}</td>
+      <td>{{ data.advanceName }}</td>
+      <td>{{ data.amount }}</td>
+      <td>{{ data.description }}</td>
+      <td>{{ data.status }}</td>
+      <!-- <td>{{ data.created }}</td> -->
+      <!-- <td>{{ data.updated }}</td> -->
+      <td>
+        <i class="fa fa-pencil" (click)="editAdvance(data.advanceId)"></i>&nbsp;
+        <i class="fa-solid fa-trash" (click)="deleteAdvance(data)"></i>
+      </td>
+    </tr>
+    
+  </ng-template>
+</p-table>
+
+<p-dialog header="Request Advance" [(visible)]="isAddAdvanceDialog" [modal]="true" [style]="{ width: '60vw' }" [draggable]="false" [resizable]="false">
+  <app-add-advance [advanceId]="advanceId" (closeDialog)="closeDialoge($event)"></app-add-advance>
+</p-dialog>
+
+<!-- 
+<section  class="add-expense-wrapper">
+  <form [formGroup]="addAdvance" (ngSubmit)="onSubmit()">
+    <div class="p-fluid">
+      <div class="p-formgrid grid">
+        <div class="field col">
+          <label for="date">Date<span class="kts-required">*</span></label>
+          <input pInputText id="date" type="date" formControlName="date" placeholder="yyyy-mm-dd" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['date'].errors
+            }" />
+        </div>
+        <div class="field col">
+          <label for="advanceName">Advance Name<span class="kts-required">*</span></label>
+          <input required pInputText id="advanceName" type="text" formControlName="advanceName"
+            placeholder="Enter Report Name" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['advanceName'].errors
+            }" />
+        </div>
+      </div>
+      <div class="p-formgrid grid">
+        <div class="field col">
+          <label for="description">Description<span class="kts-required">*</span></label>
+          <input pInputText id="description" type="text" formControlName="description" placeholder="Enter Description"
+            [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['description'].errors
+            }" />
+        </div>
+        <div class="field col">
+          <label for="status">Status<span class="kts-required">*</span></label>
+          <input pInputText id="status" type="text" formControlName="status" placeholder="Enter Status" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['status'].errors
+            }" />
+        </div>
+        <div class="field col">
+          <label for="amount">Amount<span class="kts-required">*</span></label>
+          <input pInputText id="amount" maxLength="5" minLength="1" pattern="^[0-9]{1,5}" type="text"
+            formControlName="amount" placeholder="Enter Amount" [ngClass]="{
+              'ng-invalid ng-dirty': isSubmitted && f['amount'].errors
+            }" />
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-content-end flex-wrap">
+      <button pButton type="submit" class="p-button-primary mr-2" (click)="UpdateAdvance()">
+        Update
+      </button>
+      <button pButton type="button" (click)="onReset()" class="p-button-warning float-right mx-2">
+        Reset
+      </button>
+    </div>
+  </form>
+</section> -->

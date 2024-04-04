@@ -1,0 +1,13 @@
+<section class="ink-user-info-wrapper" [@visibilityChanged]="isVisible">
+  <div class="ink-user-info">
+    
+  
+    <span class="ink-user-name" *ngIf="!userInfo?.fullName">
+      <img src="{{userInfo.imageUrl}}" alt="user" class="img-responsive ink-user-img" alt="user" />
+      <p>Role: {{userInfo.role}}</p>
+      <p>Name: {{ userInfo.firstName }} {{ userInfo.lastName }} </p>
+      <p>Email: {{ userInfo.email }} </p>
+    </span>
+    <p-tieredMenu [model]="menuItems" styleClass="p-mt-3 ink-sub-menu"></p-tieredMenu>
+  </div>  
+</section>

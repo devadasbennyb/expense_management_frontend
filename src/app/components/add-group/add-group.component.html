@@ -1,0 +1,30 @@
+<section class="add-group-wrapper">
+    <form [formGroup]="addGroup" (ngSubmit)="onSubmit()">
+        <div class="p-fluid">
+            <div class="p-formgrid grid">
+                <div class="field col">
+                    <label for="departmentName">Group Name<span class="kts-required">*</span></label>
+                    <input pInputText id="departmentName" type="text" formControlName="departmentName"
+                        placeholder="Enter Group Name" />
+                </div>
+                <div class="field col">
+                    <label for="departmentDescription">Department Description<span class="kts-required">*</span></label>
+                    <input required pInputText id="departmentDescription" type="text"
+                        formControlName="departmentDescription" placeholder="Enter Department Description" />
+                </div>
+            </div> 
+        </div>
+
+        <div class="flex justify-content-end flex-wrap">
+            <button pButton type="submit" class="p-button-primary mr-2" (click)="saveGroup()">
+                Submit
+            </button>
+            <button pButton type="submit" class="p-button-primary mr-2" (click)="UpdateGroup()">
+                Update
+            </button>
+            <button pButton type="button" (click)="onReset()" class="p-button-warning float-right mx-2">
+                Reset
+            </button>
+        </div>
+    </form>
+</section>

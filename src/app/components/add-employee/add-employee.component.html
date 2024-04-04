@@ -1,0 +1,102 @@
+<section class="add-user-wrapper">
+    <form [formGroup]="addEmployee" (ngSubmit)="onSubmit()">
+        <div class="p-fluid">
+            <div class="p-formgrid grid">
+                <div class="field col" formGroupName="departmentModel">
+                    <label for="departmentId">Department Id<span class="kts-required">*</span></label>
+                    <input required maxLength="4" minLength="1" pattern="^[0-9]{1,4}" pInputText id="departmentId" type="text"
+                        formControlName="departmentId" placeholder="Enter Department Id" [ngClass]="{
+                        'ng-invalid ng-dirty': isSubmitted && f['departmentId'].errors
+                      }" />
+                </div>
+                <div class="field col" formGroupName="managerModel">
+                    <label for="managerId">Manager Id<span class="kts-required">*</span></label>
+                    <input required maxLength="4" minLength="1" pattern="^[0-9]{1,4}" pInputText id="managerId" type="text"
+                        formControlName="managerId" placeholder="Enter Manager Id" [ngClass]="{
+                        'ng-invalid ng-dirty': isSubmitted && f['managerId'].errors
+                      }" />
+                </div>
+            </div>
+            <div class="p-formgrid grid">
+
+                <div class="field col">
+                    <label for="firstName">First Name<span class="kts-required">*</span></label>
+                    <input pInputText id="firstName" type="text" formControlName="firstName"
+                        placeholder="Enter First Name" [ngClass]="{
+                'ng-invalid ng-dirty': isSubmitted && f['firstName'].errors}" />
+                </div>
+                <div class="field col">
+                    <label for="lastName">Last Name<span class="kts-required">*</span></label>
+                    <input pInputText id="lastName" type="text" formControlName="lastName" placeholder="Enter Last Name"
+                        [ngClass]="{
+                'ng-invalid ng-dirty': isSubmitted && f['lastName'].errors }" />
+                </div>
+                <div class="field col">
+                    <label for="email">Email Id<span class="kts-required">*</span></label>
+                    <input pInputText id="email" type="email" formControlName="emailId" placeholder="Enter Email Id"
+                        [ngClass]="{
+                'ng-invalid ng-dirty': isSubmitted && f['email'].errors}" />
+                </div>
+            </div>
+            <div class="p-formgrid grid">
+                <div class="field col">
+                    <label for="mobile">Mobile Number<span class="kts-required">*</span></label>
+                    <input pInputText id="mobile" pattern="^[0-9]{10}" type="text" formControlName="mobile"
+                        placeholder="Enter Mobile Number" [ngClass]="{
+                    'ng-invalid ng-dirty': isSubmitted && f['mobile'].errors
+                  }" />
+                </div>
+                <div class="field col">
+                    <label for="accountNumber">Account Number<span class="kts-required">*</span></label>
+                    <input pInputText id="accountNumber" pattern="^[0-9]{12}" type="text"
+                        formControlName="accountNumber" placeholder="Enter Account Number" [ngClass]="{
+                    'ng-invalid ng-dirty': isSubmitted && f['accountNumber'].errors
+                  }" />
+                </div>
+                <div class="field col">
+                    <label for="creditCard">Credit Card Number<span class="kts-required">*</span></label>
+                    <input pInputText id="creditCard" pattern="^[0-9]{12}" type="text" formControlName="creditCard"
+                        placeholder="Enter Credit Card Number" [ngClass]="{
+                    'ng-invalid ng-dirty': isSubmitted && f['creditCard'].errors
+                  }" />
+                </div>
+            </div>
+
+            <div class="p-formgrid grid">
+                <div class="field col">
+                    <label for="address">Address<span class="kts-required">*</span></label>
+                    <input pInputText id="address" type="text" formControlName="address" placeholder="Enter address"
+                        [ngClass]="{
+                'ng-invalid ng-dirty': isSubmitted && f['address'].errors}" />
+                </div>
+                <div class="field col">
+                    <label for="state">State<span class="kts-required">*</span></label>
+                    <input pInputText id="state" type="text" formControlName="state" placeholder="Enter state"
+                        [ngClass]="{
+                 'ng-invalid ng-dirty': isSubmitted && f['state'].errors}" />
+                </div>
+                <div class="field col">
+                    <label for="zip">Zip<span class="kts-required">*</span></label>
+                    <input pInputText id="zip" pattern="^[0-9]{6}" type="text" formControlName="zip"
+                        placeholder="Enter zip" [ngClass]="{
+                    'ng-invalid ng-dirty': isSubmitted && f['zip'].errors
+                  }" />
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-content-end flex-wrap">
+            <!-- <button pButton type="submit" class="p-button-primary mr-2" [disabled]="addExpense.invalid"> -->
+            <button pButton type="submit" class="p-button-primary mr-2" (click)="saveUser()">
+                Submit
+            </button>
+            <button pButton *ngIf="update" type="submit" class="p-button-primary mr-2" (click)="UpdateUser()">
+                Update
+            </button>
+            <button pButton type="button" (click)="onReset()" class="p-button-warning float-right mx-2">
+                Reset
+            </button>
+        </div>
+
+    </form>
+</section>

@@ -1,0 +1,72 @@
+<section class="add-expense-wrapper">
+    <form [formGroup]="addReport" (ngSubmit)="onSubmit()">
+        <div class="p-fluid">
+            <div class="p-formgrid grid">
+                <div class="field col">
+                    <label for="date">Date<span class="kts-required">*</span></label>
+                    <input pInputText id="date" type="date" formControlName="date" placeholder="yyyy-mm-dd" [ngClass]="{
+                'ng-invalid ng-dirty': isSubmitted && f['date'].errors
+              }" />
+                </div>
+                <div class="field col">
+                    <label for="reportName">Report Name<span class="kts-required">*</span></label>
+                    <input required pInputText id="reportName" type="text" formControlName="reportName"
+                        placeholder="Enter Report Name" [ngClass]="{
+                'ng-invalid ng-dirty': isSubmitted && f['reportName'].errors
+              }" />
+                </div>
+                <div class="field col" formGroupName="employeeModel">
+                    <label for="empId">Employee Id<span class="kts-required">*</span></label>
+                    <input required maxLength="4" minLength="1" pattern="^[0-9]{1,4}" pInputText id="empId" type="text"
+                        formControlName="empId" placeholder="Enter Employee Id" [ngClass]="{
+                'ng-invalid ng-dirty': isSubmitted && f['empId'].errors
+              }" />
+                </div>
+            </div>
+            <div class="p-formgrid grid">
+                <div class="field col">
+                    <label for="duration">Duration<span class="kts-required">*</span></label>
+                    <input pInputText id="duration" type="text" formControlName="duration" placeholder="Enter Duration"
+                        [ngClass]="{
+                    'ng-invalid ng-dirty': isSubmitted && f['duration'].errors
+                  }" />
+                </div>
+                <div class="field col">
+                    <label for="description">Description<span class="kts-required">*</span></label>
+                    <input pInputText id="description" type="text" formControlName="description"
+                        placeholder="Enter Description" [ngClass]="{
+                    'ng-invalid ng-dirty': isSubmitted && f['description'].errors
+                  }" />
+                </div>
+            </div>
+            <div class="p-formgrid grid">
+                <div class="field col">
+                    <label for="total">Total<span class="kts-required">*</span></label>
+                    <input pInputText id="total" maxLength="5" minLength="1" pattern="^[0-9]{1,5}" type="text"
+                        formControlName="total" placeholder="Enter Total" [ngClass]="{
+                    'ng-invalid ng-dirty': isSubmitted && f['total'].errors
+                  }" />
+                </div>
+                <div class="field col">
+                    <label for="status">Status<span class="kts-required">*</span></label>
+                    <input pInputText id="status" type="text" formControlName="status" placeholder="Enter Status"
+                        [ngClass]="{
+                    'ng-invalid ng-dirty': isSubmitted && f['status'].errors
+                  }" />
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-content-end flex-wrap">
+            <!-- <button pButton type="submit" class="p-button-primary mr-2" [disabled]="addTrip.invalid"> -->
+            <button pButton *ngIf="save" type="submit" class="p-button-primary mr-2" (click)="saveReport()">
+                Submit
+            </button>
+            <button pButton *ngIf="update" type="submit" class="p-button-primary mr-2" (click)="UpdateReport()">
+                Update
+            </button>
+            <button pButton type="button" (click)="onReset()" class="p-button-warning float-right mx-2">
+                Reset
+            </button>
+        </div>
+    </form>
+</section>

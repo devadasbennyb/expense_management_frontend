@@ -1,0 +1,35 @@
+<section class="groups-wrapper">
+    <div class="grid">
+        <p-table [value]="groupsData" styleClass="p-datatable-sm" [tableStyle]="{'min-width': '50rem'}">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Group Id</th>
+                    <th>Group Name</th>
+                    <th>Description</th>
+                    <td>Actions</td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-group>
+                <tr>
+                    <td>{{group.departmentId}}</td>
+                    <td>{{ group.departmentName }}</td>
+                    <td>{{group.departmentDescription}}</td>
+                    <td>
+                        <i class="fa fa-pencil" (click)="editGroup(group.departmentId)"></i>&nbsp;
+                        <i class="fa-solid fa-trash" (click)="deleteGroup(group)"></i>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+        <!-- <p-card *ngFor="let group of groups" class="col-4">
+            <p-avatar icon="fa fa-group" styleClass="p-mr-12" size="xlarge" [style]="{'background-color':'#2196F3', 'color': '#ffffff'}"></p-avatar>
+            <div>{{ group.departmentName }}</div>
+            <div>{{group.groupDescription}}</div>
+        </p-card> -->
+    </div>
+</section>
+
+<p-dialog header="Update Group" [(visible)]="isAddGroupDialog" [modal]="true" [style]="{ width: '60vw' }"
+    [draggable]="false" [resizable]="false">
+    <app-add-group [departmentId]="departmentId" (closeDialog)="closeDialoge($event)"></app-add-group>
+</p-dialog>
